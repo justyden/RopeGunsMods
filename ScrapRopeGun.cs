@@ -19,8 +19,8 @@ namespace RopeGuns
         public override void SetDefaults()
         {
             // The way the weapon scales while it is being held.
-            Item.width = 20;
-            Item.height = 20;
+            Item.width = 40;
+            Item.height = 30;
 
             // Weapon stats
             Item.value = 100;

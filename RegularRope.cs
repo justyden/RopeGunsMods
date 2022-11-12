@@ -24,6 +24,7 @@ namespace RopeGuns
             Projectile.timeLeft = 1200;
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.aiStyle = 1;
+            Projectile.alpha = 255;
             AIType = ProjectileID.WaterStream;
 
         }
