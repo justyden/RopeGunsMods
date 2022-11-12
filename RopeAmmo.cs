@@ -9,6 +9,7 @@ namespace RopeGuns
 {
     public class RopeAmmo : GlobalItem
     {
+        
         public override void SetDefaults(Item item)
         {
             if (item.type == ItemID.Rope)
