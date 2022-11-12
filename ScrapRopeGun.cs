@@ -11,6 +11,7 @@ namespace RopeGuns
     {
         public override void SetStaticDefaults()
         {
+            // Gives the weapon a name as well as a tooltip.
             DisplayName.SetDefault("Scrap Rope Gun");
             Tooltip.SetDefault("A rope shooter that appears to just hardly be operational.");
         }
@@ -44,11 +45,16 @@ namespace RopeGuns
 
         public override Vector2? HoldoutOffset()
         {
+            // Lets the location of the weapon be in the correct spot on the player model.
             return new Vector2(2f, -2f);
         }
 
-        
-
-
+        public override void AddRecipes()
+        {
+            // Creates a recipes
+            CreateRecipe().AddIngredient(ItemID.StoneBlock, 1);
+            CreateRecipe().AddTile(TileID.WorkBenches);
+            CreateRecipe().Register();
+        }
     }
 }
