@@ -1,1 +1,1 @@
-Rope Guns is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+This mod adds a varity of rope guns to the game that can be used through a run. Try them out they are pretty awesome.
