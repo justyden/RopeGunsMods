@@ -51,7 +51,7 @@ namespace RopeGuns
 
         public override void AddRecipes()
         {
-            // Creates a recipes
+            // Creates a recipe
             CreateRecipe().AddIngredient(ItemID.StoneBlock, 1);
             CreateRecipe().AddTile(TileID.WorkBenches);
             CreateRecipe().Register();
