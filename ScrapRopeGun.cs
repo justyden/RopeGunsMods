@@ -26,6 +26,7 @@ namespace RopeGuns
             Item.value = 100;
             Item.rare = ItemRarityID.Green;
             Item.useTime = 10;
+            Item.useAnimation = 10;
             Item.autoReuse = true;
             Item.DamageType = DamageClass.Ranged;
             Item.damage = 1;
@@ -33,12 +34,11 @@ namespace RopeGuns
             Item.noMelee = true;
 
             //Weapon fire properties
-            Item.useAnimation = 10;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.shoot = ModContent.ProjectileType<RegularRope>();
             Item.useAmmo = ItemID.Rope;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.shootSpeed = 16f;
+            Item.shootSpeed = 10;
 
         }
 
