@@ -1,4 +1,6 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -28,6 +30,18 @@ namespace RopeGuns
             Projectile.alpha = 255;
             AIType = ProjectileID.Bullet;
 
+        }
+
+        public override bool PreDraw(ref Color lightColor)
+        {
+            Texture2D texture = (Texture2D)ModContent.Request<Texture2D>(Texture);
+            int frameHeight = texture.Height;
+            int startY = frameHeight * Projectile.frame;
+            float changeY = 20f;
+            Rectangle sourceRectangle = new Rectangle(0, startY, texture.Width, frameHeight);
+            Vector2 orgin = sourceRectangle.Size() / 2f;
+            orgin.Y = (float)(Projectile.spriteDirection == 1 ? sourceRectangle.Height - changeY : changeY);
+            return false;
         }
     }
 }
