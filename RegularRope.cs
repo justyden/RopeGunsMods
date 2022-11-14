@@ -31,7 +31,7 @@ namespace RopeGuns
             AIType = ProjectileID.Bullet;
 
         }
-
+        /*
         public override bool PreDraw(ref Color lightColor)
         {
             SpriteEffects spriteEffects = SpriteEffects.None;
@@ -54,5 +54,6 @@ namespace RopeGuns
                 drawColor, Projectile.rotation, orgin, Projectile.scale, spriteEffects, 0);
             return false;
         }
+        */
     }
 }
