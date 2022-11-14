@@ -14,8 +14,8 @@ namespace RopeGuns
 
         public override void SetDefaults()
         {
-            Projectile.width = 10;
-            Projectile.height = 5;
+            Projectile.width = 40;
+            Projectile.height = 40;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
@@ -25,7 +25,7 @@ namespace RopeGuns
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.aiStyle = 1;
             Projectile.alpha = 255;
-            AIType = ProjectileID.WaterStream;
+            AIType = ProjectileID.Bullet;
 
         }
     }
