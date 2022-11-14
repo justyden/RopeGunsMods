@@ -39,16 +39,19 @@ namespace RopeGuns
             {
                 spriteEffects = SpriteEffects.FlipHorizontally;
             }
-            /*
             Texture2D texture = (Texture2D)ModContent.Request<Texture2D>(Texture);
             int frameHeight = texture.Height;
             int startY = frameHeight * Projectile.frame;
+
             float changeY = 20f;
             Rectangle sourceRectangle = new Rectangle(0, startY, texture.Width, frameHeight);
             Vector2 orgin = sourceRectangle.Size() / 2f;
             orgin.Y = (float)(Projectile.spriteDirection == 1 ? sourceRectangle.Height - changeY : changeY);
-            */
 
+            Color drawColor = Projectile.GetAlpha(lightColor);
+            Main.EntitySpriteDraw(texture, Projectile.Center - Main.screenPosition
+                + new Vector2(0f, Projectile.gfxOffY), sourceRectangle,
+                drawColor, Projectile.rotation, orgin, Projectile.scale, spriteEffects, 0);
             return false;
         }
     }
