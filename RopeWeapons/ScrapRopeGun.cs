@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
-namespace RopeGuns
+namespace RopeGuns.RopeWeapons
 {
     public class ScrapRopeGun : ModItem
     {
