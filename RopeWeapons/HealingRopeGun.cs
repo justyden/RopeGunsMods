@@ -22,14 +22,14 @@ namespace RopeGuns.RopeWeapons
         public override void SetDefaults()
         {
             // The way the weapon scales while it is being held.
-            Item.CloneDefaults(ItemID.RubyHook);
+            Item.CloneDefaults(ItemID.Hook);
             Item.width = 40;
             Item.height = 30;
 
             // Weapon stats
             Item.value = 100;
             Item.rare = ItemRarityID.Green;
-            Item.useTime = 30;
+            //Item.useTime = 30;
             Item.useAnimation = 10;
             Item.autoReuse = false;
             Item.noMelee = true;

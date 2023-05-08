@@ -13,28 +13,30 @@ namespace RopeGuns.RopeProjectiles
     {
 		private static Asset<Texture2D> chainTexture;
 
-		public override void Load()
+        public override void AI()
+        {
+			//Projectile.spriteDirection = Projectile.direction;
+        }
+
+        public override void Load()
 		{ // This is called once on mod (re)load when this piece of content is being loaded.
 		  // This is the path to the texture that we'll use for the hook's chain. Make sure to update it.
-			chainTexture = ModContent.Request<Texture2D>("RopeGuns/RopeProjectiles/HealingRopeProjectile");
+			chainTexture = ModContent.Request<Texture2D>("RopeGuns/RopeProjectiles/HealingRopeProjectileChain");
 		}
 		public override void Unload()
 		{ // This is called once on mod reload when this piece of content is being unloaded.
 		  // It's currently pretty important to unload your static fields like this, to avoid having parts of your mod remain in memory when it's been unloaded.
 			chainTexture = null;
 		}
-
-		/*
-		public override void SetStaticDefaults() {
-			// If you wish for your hook projectile to have ONE copy of it PER player, uncomment this section.
-			ProjectileID.Sets.SingleGrappleHook[Type] = true;
-		}
-		*/
-
 		
 		public override void SetDefaults()
 		{
-			Projectile.CloneDefaults(ProjectileID.GemHookRuby); // Copies the attributes of the Amethyst hook's projectile.
+			Projectile.CloneDefaults(ProjectileID.Hook); // Copies the attributes of the Amethyst hook's projectile.
+		}
+
+		public override float GrappleRange()
+		{
+			return 400f;
 		}
 
 		public override void NumGrappleHooks(Player player, ref int numHooks)
@@ -42,7 +44,6 @@ namespace RopeGuns.RopeProjectiles
 			numHooks = 1; // The amount of hooks that can be shot out
 		}
 
-		// default is 11, Lunar is 24
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
 			speed = 11f; // How fast the grapple returns to you after meeting its max shoot distance
@@ -65,7 +66,7 @@ namespace RopeGuns.RopeProjectiles
 			while (distanceToPlayer > 20f && !float.IsNaN(distanceToPlayer))
 			{
 				directionToPlayer /= distanceToPlayer; // get unit vector
-				directionToPlayer *= chainTexture.Height(); // multiply by chain link length
+				//directionToPlayer *= chainTexture.Height(); // multiply by chain link length
 
 				center += directionToPlayer; // update draw position
 				directionToPlayer = playerCenter - center; // update distance
