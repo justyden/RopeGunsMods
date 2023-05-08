@@ -4,10 +4,11 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RopeGuns
+namespace RopeGuns.RopeProjectiles
 {
     public class RegularRope : ModProjectile
     {
+   
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Regular Rope");
@@ -17,20 +18,24 @@ namespace RopeGuns
 
         public override void SetDefaults()
         {
-            Projectile.width = 40;
-            Projectile.height = 40;
+            Projectile.width = 20;
+            Projectile.height = 1;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = true;
-            Projectile.penetrate = -1;
+            Projectile.penetrate = 1;
             Projectile.timeLeft = 1200;
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.aiStyle = 1;
             Projectile.alpha = 255;
-            AIType = ProjectileID.Bullet;
-
+            //Projectile.usesLocalNPCImmunity = true;
+            //Projectile.localNPCHitCooldown = -1;
+            Projectile.usesIDStaticNPCImmunity = true;
+            Projectile.idStaticNPCHitCooldown = 5;
+            AIType = ProjectileID.Bullet;           
         }
+        
         /*
         public override bool PreDraw(ref Color lightColor)
         {
